@@ -1,4 +1,4 @@
-function ProductModal({closeModal, productId}){
+function ProductModal({closeModal, productData}){
     
     return(
         <div className="modalContainer">
@@ -10,8 +10,8 @@ function ProductModal({closeModal, productId}){
                 <h3>{productData.productDescription}</h3>
                 <h3>{productData.categoryName}</h3>
                 <h3>{productData.subcategoryName}</h3>
-                <h3>{productCost}</h3>
-                <h3>{productPrice}</h3>
+                <h3>{productData.productCost}</h3>
+                <h3>{productData.productPrice}</h3>
         </div>
         </div>
     )
