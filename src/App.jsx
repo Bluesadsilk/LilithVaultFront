@@ -25,9 +25,6 @@ function App() {
       } finally {
         setLoading(false); // Detiene el estado de carga
       }
-      if (totalVisualized <= max) {
-        setShowMoreButton(false);
-      }
     };
 
     fetchProductCount(); // Llamar a la función al montar el componente
@@ -35,11 +32,14 @@ function App() {
 
   // Función para manejar la visualización de más productos
   const handleTotalVisualized = () => {
-    if (totalVisualized + 3 <= max) {
-      setTotalVisualized(totalVisualized + 3); // Cargar 3 productos más
-    } else {
+    if (totalVisualized+3 >= max) {
       setShowMoreButton(false); // Ocultar el botón si no hay más productos para cargar
     }
+    else{
+    
+    setTotalVisualized(totalVisualized+3);
+    }
+   
   };
 
   if (loading) return <p>Cargando...</p>; // Mensaje de carga mientras se obtiene el conteo
@@ -48,10 +48,11 @@ function App() {
   return (
     <>
       <h1>Lilith Vault</h1>
-      {/* Mostrar solo el número de productos basado en totalVisualized */}
+      <div className='productsGrid'>
       {[...Array(totalVisualized)].map((_, index) => (
         <Product key={index} productId={index + 1} url={apiUrl} />
       ))}
+      </div>
       {/* Mostrar el botón si aún se pueden cargar más productos */}
       {showMoreButton && <button onClick={handleTotalVisualized}>Cargar más</button>}
     </>

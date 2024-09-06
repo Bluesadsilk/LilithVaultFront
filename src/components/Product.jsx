@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from "react";
-
+import ProductModal from "./ProductModal"
 function Product({ productId, url }) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isClicked, setisClicked] = useState(false)
 
+  const handleModalClick = () =>{
+    setisClicked(true)
+  }
+
+  const handleModalClose = () =>{
+    setisClicked(false)
+  }
   useEffect(() => {
     const apiUrl = `${url}/products/${productId}`;
 
@@ -34,10 +42,14 @@ function Product({ productId, url }) {
   const imgLink= data.productImageLink
   const productName= data.productName
 
-  return (
-    <>
-      <h3>{productName}</h3>
-      <img src={imgLink} alt="productImage" />
+  return (<>
+    <div className="productContainer" onClick={handleModalClick}>
+      <h3 className="productName">{productName}</h3>
+      <img className="productImg" src={imgLink} alt="productImage" />
+    </div>
+
+    {isClicked && <ProductModal closeModal={handleModalClose}
+    />} 
     </>
   );
 }
