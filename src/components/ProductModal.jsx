@@ -1,8 +1,18 @@
-function ProductModal({closeModal, productId}){
+function ProductModal({closeModal, productUrl, productData}){
     
     return(
-        <div className="modalContainer"><h3>soy un Modal</h3>
-        <button onClick={closeModal}>X</button>
+        <div className="modalContainer">
+            
+            <button onClick={closeModal}>X</button>
+             <div>
+                <h3>{productData.productName}</h3>
+                <img className="productImg" src={productData.productImageLink} alt="productImage" />
+                <h3>{productData.productDescription}</h3>
+                <h3>{productData.categoryName}</h3>
+                <h3>{productData.subcategoryName}</h3>
+                <h3>{productCost}</h3>
+                <h3>{productPrice}</h3>
+        </div>
         </div>
     )
 }

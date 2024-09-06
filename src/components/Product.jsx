@@ -5,7 +5,7 @@ function Product({ productId, url }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isClicked, setisClicked] = useState(false)
-
+  const apiUrl = `${url}/products/${productId}`;
   const handleModalClick = () =>{
     setisClicked(true)
   }
@@ -14,7 +14,7 @@ function Product({ productId, url }) {
     setisClicked(false)
   }
   useEffect(() => {
-    const apiUrl = `${url}/products/${productId}`;
+    
 
     const fetchData = async () => {
       try {
@@ -48,7 +48,7 @@ function Product({ productId, url }) {
       <img className="productImg" src={imgLink} alt="productImage" />
     </div>
 
-    {isClicked && <ProductModal closeModal={handleModalClose}
+    {isClicked && <ProductModal closeModal={handleModalClose} productUrl={apiUrl} productData={data}
     />} 
     </>
   );
