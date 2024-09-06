@@ -6,6 +6,10 @@ function Product({ productId, url }) {
   const [error, setError] = useState(null);
   const [isClicked, setisClicked] = useState(false)
   const apiUrl = `${url}/products/${productId}`;
+<<<<<<< HEAD
+=======
+  
+>>>>>>> c54f18fcb371d16a4ef645c7287d81d08023b1d8
   const handleModalClick = () =>{
     setisClicked(true)
   }
@@ -48,7 +52,11 @@ function Product({ productId, url }) {
       <img className="productImg" src={imgLink} alt="productImage" />
     </div>
 
+<<<<<<< HEAD
     {isClicked && <ProductModal closeModal={handleModalClose} productUrl={apiUrl} productData={data}
+=======
+    {isClicked && <ProductModal closeModal={handleModalClose} productUrl={apiUrl}
+>>>>>>> c54f18fcb371d16a4ef645c7287d81d08023b1d8
     />} 
     </>
   );
