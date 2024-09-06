@@ -1,4 +1,4 @@
-function ProductModal({closeModal, productId}){
+function ProductModal({closeModal, productUrl}){
     
     return(
         <div className="modalContainer"><h3>soy un Modal</h3>
