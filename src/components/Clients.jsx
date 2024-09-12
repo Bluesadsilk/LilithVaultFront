@@ -1,6 +1,9 @@
 function Clients(){
 
-    return(<></>)
+    return(
+    <>
+    <h1>Clients</h1>
+    </>)
 }
 
 export default Clients
