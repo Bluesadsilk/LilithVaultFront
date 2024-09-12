@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import {React, useState, useEffect } from "react";
 import ProductModal from "./ProductModal"
 function Product({ productId, url }) {
   const [data, setData] = useState(null);
@@ -32,7 +32,7 @@ function Product({ productId, url }) {
     };
 
     fetchData();
-  }, [productId, url]);
+  }, [productId, url, apiUrl]);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -45,7 +45,7 @@ function Product({ productId, url }) {
   return (<>
     <div className="productContainer" onClick={handleModalClick}>
       <h3 className="productName">{productName}</h3>
-      <img className="productImg" src={imgLink} alt="productImage" />
+      <div className="productImgContainer"><img className="productImg" src={imgLink} alt="productImage" /></div>
     </div>
 
     {isClicked && <ProductModal closeModal={handleModalClose} productData={data}
