@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Products from './Products';
-import Orders from './Orders';
-import Cash from './Cash';
-import Clients from './Clients';
-import Providers from './Providers';
-import Bills from './Bills';
+import Products from './Products/Products';
+import Orders from './Orders/Orders';
+import Cash from './Cash/Cash';
+import Clients from './Clients/Clients';
+import Providers from './Providers/Providers';
+import Bills from './Bills/Bills';
 import Home from './Home'; // Asegúrate de importar el componente Home
 import '../App.css'; // Asegúrate de importar el archivo de estilos
 
