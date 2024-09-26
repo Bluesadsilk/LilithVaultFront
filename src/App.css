@@ -266,3 +266,60 @@ p {
 }
 
 
+.productHeader{
+  background-color: darkgrey;
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10vw;}
+
+  .newProductModalContainer {
+    position: fixed; /* Cambiado a fixed para que el modal no se desplace al hacer scroll */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newProductForm {
+    background-color: #282c34; /* Fondo oscuro para el formulario */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra para un efecto de profundidad */
+    width: 100%; /* Asegúrate de que el formulario ocupe el espacio disponible */
+    max-width: 600px; /* Ancho máximo para evitar que sea demasiado ancho */
+}
+
+.newProductFormField {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Espaciado consistente */
+    margin-bottom: 15px; /* Espaciado entre campos */
+}
+
+.newProductFormField label {
+    color: white;
+    font-size: 16px; /* Tamaño de fuente para mejor legibilidad */
+    border: 2px solid white; /* Corregido el formato del border */
+    border-radius: 5px; /* Bordes más sutiles */
+    padding: 5px; /* Padding para espacio interno */
+    min-width: 120px; /* Ancho mínimo para etiquetas */
+}
+
+.newProductFormField input {
+    flex-grow: 1; /* Permitir que el input crezca */
+    padding: 10px; /* Espacio interno para los inputs */
+    border-radius: 5px; /* Bordes redondeados para inputs */
+    border: 2px solid #ccc; /* Borde claro para inputs */
+    outline: none; /* Eliminar el contorno predeterminado */
+    transition: border-color 0.3s; /* Transición para el borde */
+}
+
+.newProductFormField input:focus {
+    border-color: white; /* Cambio de color al hacer foco */
+}
